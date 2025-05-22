@@ -1,0 +1,43 @@
+name: Build and Deploy to GitHub Pages
+
+# نشغل عند كل دفع للفرع الرئيسي
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    # نمنح الإذن اللازم للوصول إلى Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. نسحب آخر نسخة من المستودع
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. نهيئ بيئة Pages
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+
+      # 3. نبني الموقع (مثال: لو تستخدم Jekyll)
+      - name: Build site with Jekyll
+        run: |
+          gem install bundler
+          bundle install
+          bundle exec jekyll build --destination ./_site
+
+      # 4. نرفع مجلد البناء كأرتيفاكت
+      - name: Upload artifact for deployment
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./_site
+
+      # 5. ننشر الأرتيفاكت على Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
