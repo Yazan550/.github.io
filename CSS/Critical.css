@@ -1,1 +1,24 @@
-@font-face{font-family:Cairo;font-style:normal;font-weight:700;font-display:swap;src:url('https://fonts.logooshop.com/Cairo/cairo-v28-arabic_latin-700.woff2') format('woff2')}@font-face{font-family:'Noto Sans Arabic';font-style:normal;font-weight:500;font-display:swap;src:url('https://fonts.logooshop.com/NotoSansArabic/noto-sans-arabic-v29-arabic_latin-500.woff2') format('woff2')}body{margin:0;padding:0;font-family:'Noto Sans Arabic',serif;font-size:16px;font-weight:500;line-height:1.5;background:#fff;overflow-x:hidden}h1,h2,h3,h4,h5,h6{font-family:Cairo,sans-serif;font-weight:700;color:#151515;margin:0 0 .5em}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.logooshop.com/Cairo/cairo-v28-arabic_latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.logooshop.com/NotoSansArabic/noto-sans-arabic-v29-arabic_latin-500.woff2') format('woff2');
+}
+
+body {
+  font-family: 'Noto Sans Arabic', serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+}
+
